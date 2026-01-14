@@ -92,3 +92,7 @@ The generated `Data Fitting.gif` displays:
 ---
 
 *Built with PyTorch, NumPy, and Matplotlib*
+
+
+![Data Fitting](https://github.com/user-attachments/assets/a67a76c3-2c17-4a76-ad8a-d20499e4394c)
+
