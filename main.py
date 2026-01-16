@@ -15,6 +15,9 @@ def parse_args():
     parser.add_argument('--hidden', type=int, default=128, help='隱藏層神經元數量')
     parser.add_argument('--lr', type=float, default=0.002, help='學習率')
     parser.add_argument('--epochs', type=int, default=3000, help='訓練回合數')
+    parser.add_argument('--points', type=int, default=80, help='訓練數據點數量')
+
+    parser.add_argument('--activation', type=str, default='tanh', choices=['tanh', 'relu', 'sigmoid', 'leakyrelu', 'gelu'], help='激活函數')
     
     parser.add_argument('--func', type=str, default=None, 
                         help='自定義數學函數')
@@ -28,8 +31,10 @@ def main():
     LEARNING_RATE = args.lr
     EPOCHS = args.epochs
     CUSTOM_FUNC = args.func
-    
-    NUM_POINTS = 80      
+
+    ACTIVATION = args.activation
+
+    NUM_POINTS = args.points      
     SNAPSHOT_STEP = 20    
 
     print("="*40)
@@ -51,7 +56,7 @@ def main():
         print("請檢查函數表達式是否正確")
         return
 
-    model = MLP(hidden_size=HIDDEN_SIZE)
+    model = MLP(hidden_size=HIDDEN_SIZE, activation=ACTIVATION)
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
     criterion = nn.MSELoss()
 
