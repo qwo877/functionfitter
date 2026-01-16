@@ -96,3 +96,16 @@ The generated `Data Fitting.gif` displays:
 
 ![Data Fitting](https://github.com/user-attachments/assets/a67a76c3-2c17-4a76-ad8a-d20499e4394c)
 
+
+## updated on 2026/01/16
+
+### Overview
+Include the activation function and the number of training data points as controllable parameters as well.  
+| parameter | default value | illustrate |
+|------|--------|------|
+| `--func` | `None` | random function |
+| `--hidden` | `128` | Number of neurons in hidden layer |
+| `--lr` | `0.002` | learning rate |
+| `--epochs` | `3000` | Number of training rounds |
+| `--points` | `80` | Number of training data points |
+| `--activation` | `tanh` | Activation function |
